@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>STI Enrollment Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: darkblue;
+        }
+        .form-container {
+            width: 400px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: yellow;
+            border-radius: 8px;
+        }
+        input[type="text"] {
+            width: 90%;
+            padding: 5px;
+            margin-top: 6px;
+        }
+        .radio-group {
+            margin-top: 10px;
+        }
+        .buttons {
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h2>STI Enrollment Form</h2>
+
+        <input type="text" id="Fname" name="Fname" placeholder="Full Name"><br>
+        <input type="text" id="Eadd" name="Mname" placeholder="Email Address"><br>
+        <input type="text" id="Cnum" name="Lname" placeholder="Contact Number"><br>
+        <input type="text" id="Program" name="email" placeholder="Program"><br>
+        <input type="text" id="YearNterm" name="yearAndlevel" placeholder="Year and Term"><br>
+
+        <div class="radio-group">
+            Mode Of Payment: <br>
+            <input type="radio" name="year" value="1st"> Cash <br>
+            <input type="radio" name="year" value="2nd"> Low Down-payment<br>
+            <input type="radio" name="year" value="3rd"> Low Monthly Down-payment
+        </div>
+
+        <div class="buttons">
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+        </div>
+    </form>
+</div>
+</body>
+</html>
