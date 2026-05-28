@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Demo</title>
+
+<style>
+body {
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+margin: 50px;
+}
+
+button{
+padding: 8px 15px;
+margin-top: 10px;
+cursor: pointer;
+}
+
+table{
+margin-top: 20px;
+border-collapse: collapse;
+}
+
+table, th, td{
+border: 2px solid rgb(0, 0, 0);
+}
+
+th, td {
+padding: 10px 15px;
+}
+
+th{ 
+background-color: hwb(0 100% 0%);
+color: rgb(0, 0, 0)
+}
+</style>
+
+<script>
+let names = [];
+let surnames = [];
+let sections = [];
+
+function addName(){
+let name = document.getElementById('FirstInput').value;
+let surname = document.getElementById('SurnameInput').value;
+let section = document.getElementById('SectionInput').value;
+
+if(name === "" || surname === "" || section === "") {
+    alert("Wala kang Nilagay !");
+}
+else {
+    names.push(name);
+    surnames.push(surname);
+    sections.push(section);
+}
+
+document.getElementById('FirstInput').value ="";
+document.getElementById('SurnameInput').value ="";
+document.getElementById('SectionInput').value ="";
+
+displayTable();
+}
+
+function displayTable() {
+let tableBody = document.getElementById('tableBody');
+tableBody.innerHTML = "";
+
+for(let i = 0; i < names.length; i++) {
+    let row = tableBody.insertRow();
+    row.insertCell(0).innerText = i + 1;
+    row.insertCell(1).innerText = names[i];
+    row.insertCell(2).innerText = surnames[i];
+    row.insertCell(3).innerText = sections[i];
+}
+}
+</script>
+
+</head>
+
+<body>
+<h2>Add Names to List </h2>
+
+<p> Enter First Name</p>
+<input type="text" id="FirstInput" placeholder="Enter First Name"><br>
+
+<p> Enter Last Name</p>
+<input type="text" id="SurnameInput" placeholder="Enter Surname"><br>
+
+<p> Enter Section</p>
+<input type="text" id="SectionInput" placeholder="Enter Section"><br>
+<br>
+
+<button onclick="addName()">Add</button>
+
+<h3> Names List </h3>
+
+<table>
+<thead>
+<tr>    
+<th>#</th>
+<th>First Name</th>
+<th>Surname</th>
+<th>Section</th>
+</tr>
+</thead>
+
+<tbody id="tableBody">
+</tbody>
+
+</table>
+
+</body>
+</html>
