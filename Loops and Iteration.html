@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Age Kineme</title>
+
+<style>
+h2{
+  font-family:'Times New Roman', Times, serif;
+  color:rgb(0,0,0);
+}
+
+p{
+  font-size:20px;
+}
+</style>
+
+<script>
+
+function Age(){
+  let birthday = document.getElementById("birthday").value;
+  let birthDate = new Date(birthday);
+  let today = new Date();
+  let age = today.getFullYear() - birthDate.getFullYear();
+
+  if(age >= 25){
+    alert("You are above 25 years old.");
+  }
+  else{
+    alert("You are below 25 years old.");
+  }
+
+  let num = prompt("Enter Your Age:");
+  num = Number(num);
+
+  if(num > 100){
+    alert("Greater Than 100.");
+  }
+  else{
+    alert("Less Than 100.");
+  }
+}
+
+function Enter(){
+  document.getElementById("birthday").value =
+  document.getElementById("datePicker").value;
+  Age();
+}
+
+</script>
+</head>
+
+<body>
+
+<h2>Your Birthday</h2>
+<p>Input your Birthday</p>
+
+<input type="date" id="datePicker">
+<input type="hidden" id="birthday">
+
+<button onclick="Enter()">Enter</button>
+
+<h2>Loops</h2>
+
+<p>Numbers 0 - 30</p>
+<div id="A"></div>
+
+<script>
+for(let i = 0; i <= 30; i++){
+  document.getElementById("A").innerHTML += i + "<br>";
+}
+</script>
+
+<p>Even values from 0 - 40</p>
+<div id="B"></div>
+
+<script>
+for(let i = 0; i <= 40; i++){
+  if(i % 2 == 0){
+    document.getElementById("B").innerHTML += i + "<br>";
+  }
+}
+</script>
+
+<p>40 down to 10 divisible by 3</p>
+<div id="C"></div>
+
+<script>
+for(let i = 40; i >= 10; i--){
+  if(i % 3 == 0){
+    document.getElementById("C").innerHTML += i + "<br>";
+  }
+}
+</script>
+
+</body>
+</html>
+
+<!--Cabuyao BT604E-->
