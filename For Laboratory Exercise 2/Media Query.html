@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Women with Baskets — Anita Magsaysay-Ho</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+    :root {
+        --cream: #f4e1d6;
+        --warm-brown: #7a4f3a;
+        --deep-brown: #3e1f0e;
+        --gold: #c9965a;
+        --light-gold: #e8c99a;
+        --text-dark: #2b1a10;
+    }
+
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        background-color: var(--cream);
+        background-image:
+            radial-gradient(ellipse at 20% 50%, rgba(201,150,90,0.10) 0%, transparent 60%),
+            radial-gradient(ellipse at 80% 20%, rgba(122,79,58,0.08) 0%, transparent 55%);
+        font-family: 'Jost', sans-serif;
+        color: var(--text-dark);
+        min-height: 100vh;
+    }
+
+    /* Page header */
+    .page-header {
+        text-align: center;
+        padding: 52px 24px 36px;
+    }
+
+    .page-header::after {
+        content: '';
+        display: block;
+        width: 80px;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, var(--gold), transparent);
+        margin: 18px auto 0;
+    }
+
+    .page-header .eyebrow {
+        font-family: 'Jost', sans-serif;
+        font-weight: 300;
+        font-size: 11px;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+        color: var(--warm-brown);
+        margin-bottom: 10px;
+    }
+
+    .page-header h1 {
+        font-family: 'Cormorant Garamond', serif;
+        font-weight: 600;
+        font-size: clamp(2rem, 5vw, 3.4rem);
+        color: var(--deep-brown);
+        line-height: 1.1;
+    }
+
+    .page-header h1 em {
+        font-style: italic;
+        color: var(--warm-brown);
+    }
+
+    /* Grid — untouched layout and borders */
+    .container {
+        display: grid;
+        flex-wrap: wrap;
+        grid-template-columns: 33.3% 33.3% 33.3%;
+        gap: 0px;
+        grid-template-areas:
+        "image4 image3 image1"
+        "image6 image2 image5"
+        "footer footer footer"
+        "paragraph paragraph paragraph"
+        "video video video";
+    }
+
+    #image1 { grid-area: image1; }
+    #image2 { grid-area: image2; }
+    #image3 { grid-area: image3; }
+    #image4 { grid-area: image4; }
+    #image5 { grid-area: image5; }
+    #image6 { grid-area: image6; }
+
+    img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    /* Footer label */
+    #footer {
+        grid-area: footer;
+        font-family: 'Cormorant Garamond', serif;
+        font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+        font-style: italic;
+        font-weight: 400;
+        text-align: center;
+        color: var(--deep-brown);
+        background: linear-gradient(135deg, #ecddd3 0%, #f9efe8 50%, #ecddd3 100%);
+        border-top: 1px solid var(--light-gold);
+        border-bottom: 1px solid var(--light-gold);
+        padding: 22px 24px;
+        letter-spacing: 0.03em;
+    }
+
+    #footer::before,
+    #footer::after {
+        content: '✦';
+        color: var(--gold);
+        font-size: 0.75rem;
+        margin: 0 14px;
+        vertical-align: middle;
+    }
+
+    /* Biography paragraph */
+    #paragraph {
+        grid-area: paragraph;
+        font-family: 'Jost', sans-serif;
+        font-size: clamp(0.9rem, 1.6vw, 1.05rem);
+        font-weight: 300;
+        line-height: 1.85;
+        text-align: center;
+        color: var(--text-dark);
+        background-color: #fdf6f0;
+        padding: 44px clamp(20px, 8vw, 100px);
+        border-bottom: 1px solid rgba(201,150,90,0.25);
+        letter-spacing: 0.01em;
+    }
+
+    /* Video wrapper */
+    .video-wrapper {
+        grid-area: video;
+        background: var(--deep-brown);
+        padding: 36px clamp(16px, 10vw, 120px) 48px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+    }
+
+    .video-wrapper .video-label {
+        font-family: 'Jost', sans-serif;
+        font-weight: 300;
+        font-size: 10px;
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+        color: var(--light-gold);
+    }
+
+    .video-wrapper video {
+        width: 100%;
+        max-width: 860px;
+        height: auto;
+        display: block;
+        border: 1px solid rgba(201,150,90,0.35);
+    }
+
+    /* Page footer */
+    .page-footer {
+        text-align: center;
+        padding: 28px 24px;
+        background: var(--deep-brown);
+        font-family: 'Jost', sans-serif;
+        font-size: 11px;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: rgba(232,201,154,0.5);
+    }
+
+    /* Media query — fixed missing space before ( */
+    @media screen and (max-width: 720px) {
+        .container {
+            grid-template-columns: 100%;
+            gap: 0px;
+            grid-template-areas:
+            "image1"
+            "image2"
+            "image3"
+            "image4"
+            "image5"
+            "image6"
+            "footer"
+            "paragraph"
+            "video";
+        }
+    }
+</style>
+</head>
+<body>
+
+    <header class="page-header">
+        <p class="eyebrow">Filipino Modern Art</p>
+        <h1>Women with Baskets<br><em>by Anita Magsaysay-Ho</em></h1>
+    </header>
+
+    <div class="container">
+        <img id="image1" src="1.jpg" alt="Woman with Baskets">
+        <img id="image2" src="2.jpg" alt="Woman with Baskets">
+        <img id="image3" src="3.jpg" alt="Woman with Baskets">
+        <img id="image4" src="4.jpg" alt="Woman with Baskets">
+        <img id="image5" src="5.jpg" alt="Woman with Baskets">
+        <img id="image6" src="6.jpg" alt="Woman with Baskets">
+        <footer id="footer">Women with Baskets by Anita Magsaysay-Ho</footer>
+        <p id="paragraph">Anita Magsaysay-Ho (born Anita Corpus Magsaysay; May 25, 1914 – May 5, 2012) was a Filipina painter who specialized in Social Realism and post-Cubism in regard to women in Filipino culture. Magsaysay-Ho's work appeals to Modernism by utilizing more abstract designs and styles rather than realistic approaches. She was the only female member of the "Thirteen Moderns," a standing group of Filipino modernist artists, and in 1958 was chosen by a panel of experts as one of the six major painters of the country's history. The most famous works of Magsaysay-Ho are subject to the beauty of Filipino women dealing with everyday issues. Collections of her artwork can be found in museums around the Philippines.</p>
+        <div class="video-wrapper">
+            <span class="video-label">Featured Documentary</span>
+            <video id="video" controls>
+                <source src="Anita.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+
+    <div class="page-footer">Cabuyao &nbsp;·&nbsp; Lab 2</div>
+
+</body>
+</html>
